@@ -1,3 +1,5 @@
+import { PlusJakartaSans } from "./fonts";
+
 export const metadata = {
   title: "Leadstert - Landing Page",
   description: "Landing Page development by Filipe Zaidan",
@@ -10,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body>{children}</body>
+      <body className={PlusJakartaSans.className}>{children}</body>
     </html>
   );
 }

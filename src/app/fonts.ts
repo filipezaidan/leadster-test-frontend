@@ -52,11 +52,7 @@ export const PlusJakartaSans = localFont({
       weight: "500",
       style: "italic",
     },
-    {
-      path: "./fonts/PlusJakartaSans-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
+
     {
       path: "./fonts/PlusJakartaSans-SemiBold.ttf",
       weight: "600",
@@ -65,7 +61,7 @@ export const PlusJakartaSans = localFont({
     {
       path: "./fonts/PlusJakartaSans-SemiBoldItalic.ttf",
       weight: "600",
-      style: "normal",
+      style: "italic",
     },
   ],
 });

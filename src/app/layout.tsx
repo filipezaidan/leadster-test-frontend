@@ -1,3 +1,4 @@
+import "./globals.css";
 import { PlusJakartaSans } from "./fonts";
 
 export const metadata = {

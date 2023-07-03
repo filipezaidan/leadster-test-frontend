@@ -16,7 +16,7 @@ import {
 } from "./styles";
 
 // TODO: adjust gap between the elements
-export const WebNews = () => {
+export const HeroContent = () => {
   return (
     <Wrapper>
       <Container>

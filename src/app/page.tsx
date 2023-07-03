@@ -1,11 +1,11 @@
 import { Header } from "./components/Header";
-import { WebNews } from "./components/WebNews";
+import { HeroContent } from "./components/HeroContent";
 
 export default function Home() {
   return (
     <main>
       <Header />
-      <WebNews />
+      <HeroContent />
       {/* VIDEOS */}
       {/* ADVANTAGES */}
       {/* FOOTER */}

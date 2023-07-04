@@ -1,3 +1,4 @@
+import { BenefitsContent } from "./components/BenefitsContent";
 import { Header } from "./components/Header";
 import { HeroContent } from "./components/HeroContent";
 
@@ -6,8 +7,9 @@ export default function Home() {
     <main>
       <Header />
       <HeroContent />
+      <BenefitsContent />
       {/* VIDEOS */}
-      {/* ADVANTAGES */}
+
       {/* FOOTER */}
     </main>
   );

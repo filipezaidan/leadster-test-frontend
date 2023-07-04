@@ -1,5 +1,6 @@
 import "./globals.css";
 import { PlusJakartaSans } from "./fonts";
+import StyledComponentsRegistry from "./lib/registry";
 
 export const metadata = {
   title: "Leadstert - Landing Page",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={PlusJakartaSans.className}>{children}</body>
+      <body className={PlusJakartaSans.className}>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 }

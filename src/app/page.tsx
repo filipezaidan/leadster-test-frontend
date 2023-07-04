@@ -7,6 +7,7 @@ export default function Home() {
     <main>
       <Header />
       <HeroContent />
+      <section style={{ width: "100%", height: "760px" }}>videos</section>
       <BenefitsContent />
       {/* VIDEOS */}
 

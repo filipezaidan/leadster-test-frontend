@@ -21,8 +21,8 @@ export const BenefitsContent = () => {
       <LeftContent>
         <Image
           src="/comparativo.png"
-          width={739}
-          height={687}
+          width={600}
+          height={600}
           alt="Imagem de comparativos de leads entre os serviços de CTA"
           style={{ zIndex: 2, objectFit: "contain" }}
         />

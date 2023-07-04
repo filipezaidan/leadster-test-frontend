@@ -43,7 +43,7 @@ export const ContainerTitle = styled.div`
 `;
 
 export const Title = styled.span`
-  font-size: 6rem;
+  font-size: 5.2rem;
   font-weight: 700;
   font-style: normal;
   background-clip: text;
@@ -60,7 +60,7 @@ export const Subtitle = styled.span`
 
 export const ImageTitle = styled.div`
   position: absolute;
-  top: 20px;
+  top: 15px;
   right: -18px;
   width: 49px;
   height: 32px;
@@ -78,6 +78,6 @@ export const Divider = styled.div`
 `;
 
 export const Text = styled.p`
-  font-size: 1.4em;
+  font-size: 1.2rem;
   color: #1c3c50;
 `;

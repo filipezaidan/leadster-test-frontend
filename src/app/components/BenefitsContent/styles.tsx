@@ -13,7 +13,6 @@ export const Container = styled.section`
 export const LeftContent = styled.div`
   display: flex;
   position: relative;
-  /* flex-direction: column; */
   flex: 1;
   width: 100%;
   height: 100%;
@@ -43,12 +42,12 @@ export const BackgroundElement = styled.div`
 `;
 
 export const Title = styled.span`
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   color: #1c3c50;
 `;
 
 export const Subtitle = styled.span`
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #1c3c50;
 `;
 
@@ -95,5 +94,5 @@ interface DivFlexProps extends React.HTMLAttributes<HTMLDivElement> {
 export const DivFlex = styled.div<DivFlexProps>`
   display: flex;
   align-items: center;
-  gap: ${(props) => props.gap ?? null};
+  gap: ${(props) => props.gap ?? 0};
 `;

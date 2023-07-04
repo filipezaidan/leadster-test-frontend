@@ -8,8 +8,8 @@ export const Header = () => {
     <Container>
       <Image
         src={"/logo.png"}
-        width={195}
-        height={42}
+        width={150}
+        height={100}
         alt="Logo da emprresa"
         style={{ objectFit: "contain" }}
       />

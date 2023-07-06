@@ -1,20 +1,33 @@
-import { ThumbnailContainer, ThumbnailImage, ThumbnailText } from "./styles";
+import { FaPlay } from "react-icons/fa";
 
-interface IThumbnail {
+import {
+  ThumbnailContainer,
+  ThumbnailImage,
+  ThumbnailImageContainer,
+  ThumbnailOverlay,
+  ThumbnailText,
+} from "./styles";
+
+interface ThumbnailProps {
   title: string;
-  src: string;
+  thumbnail: string;
 }
 
-export const Thumbnail = ({ title, src }: IThumbnail) => {
+export const Thumbnail = ({ title, thumbnail }: ThumbnailProps) => {
   return (
     <ThumbnailContainer>
-      <ThumbnailImage
-        src={src}
-        width={362}
-        height={204}
-        style={{ objectFit: "contain" }}
-        alt="Imagem da thumbnail do video"
-      />
+      <ThumbnailImageContainer>
+        <ThumbnailImage
+          src={thumbnail}
+          width={362}
+          height={204}
+          alt={`Imagem da thumbnail do ${title}`}
+        ></ThumbnailImage>
+        <ThumbnailOverlay>
+          <FaPlay color="white" size={60} />
+        </ThumbnailOverlay>
+      </ThumbnailImageContainer>
+
       <ThumbnailText>{title}</ThumbnailText>
     </ThumbnailContainer>
   );

@@ -35,12 +35,14 @@ export const Footer = () => {
           <Text>Transformando visitantes em clientes.</Text>
         </HeaderContent>
         <Columns>
-          {FooterLinks.map(({ title, links }) => (
-            <ColumnLinks>
+          {FooterLinks.map(({ title, links }, key) => (
+            <ColumnLinks key={key}>
               <ColumnTitle>{title}</ColumnTitle>
               <ColumnLinksContainer>
-                {links.map((link) => (
-                  <LinkItem href={link.href}>{link.title}</LinkItem>
+                {links.map((link, key) => (
+                  <LinkItem key={key} href={link.href}>
+                    {link.title}
+                  </LinkItem>
                 ))}
               </ColumnLinksContainer>
             </ColumnLinks>
@@ -48,8 +50,8 @@ export const Footer = () => {
           <ColumnContact>
             <ColumnTitle>Siga a Leadster</ColumnTitle>
             <SocialIconsWrapper>
-              {socials.map((social) => (
-                <SocialIcon {...social} />
+              {socials.map((social, key) => (
+                <SocialIcon key={key} {...social} />
               ))}
             </SocialIconsWrapper>
             <Text>{`${email.name}: ${email.value} `}</Text>

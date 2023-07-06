@@ -9,6 +9,10 @@ export const ThumbnailContainer = styled.div`
   width: 362px;
   border-radius: 10px;
   overflow: hidden;
+
+  &:hover {
+    color: #007eff;
+  }
 `;
 
 export const ThumbnailOverlay = styled.div`

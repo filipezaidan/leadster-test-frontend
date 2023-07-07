@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from "./components/Header";
 import { HeroContent } from "./components/HeroContent";
 import { VideosContent } from "./components/VideosContent";

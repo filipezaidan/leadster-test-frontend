@@ -11,12 +11,13 @@ import {
 interface ThumbnailProps {
   title: string;
   thumbnail: string;
+  onClick?: () => void;
 }
 
-export const Thumbnail = ({ title, thumbnail }: ThumbnailProps) => {
+export const Thumbnail = ({ title, thumbnail, onClick }: ThumbnailProps) => {
   return (
     <ThumbnailContainer>
-      <ThumbnailImageContainer>
+      <ThumbnailImageContainer onClick={onClick}>
         <ThumbnailImage
           src={thumbnail}
           width={362}

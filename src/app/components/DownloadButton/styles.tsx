@@ -10,6 +10,7 @@ export const DownloadButtonContainer = styled.div<{ bg: string }>`
   overflow: hidden;
   background-color: ${(props) => props.bg};
   border-radius: 8px;
+  cursor: pointer;
 `;
 
 export const DownloadButtonIcon = styled.div<{ bg: string }>`

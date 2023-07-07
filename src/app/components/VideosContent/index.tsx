@@ -26,11 +26,15 @@ import {
   VideoCategories,
   VideosMock,
   VideoLimitPage,
+  VideoType,
 } from "@/app/mock/Videos";
+import { Modal } from "../Modal";
 
 export const VideosContent = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [videos, setVideos] = useState(VideosMock);
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+  const [video, setVideo] = useState<VideoType | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [videos, setVideos] = useState<typeof VideosMock>(VideosMock);
   const [filterCategory, setVideoCategory] = useState<
     VideoCategoryType | "Todos"
   >("Todos");
@@ -53,6 +57,16 @@ export const VideosContent = () => {
   const handleShowAllVideos = () => {
     setVideos(VideosMock);
     setVideoCategory("Todos");
+  };
+
+  const handleSelectVideo = (video: VideoType) => {
+    setVideo(video);
+    setIsOpenModal(true);
+  };
+
+  const handleOnCloseodal = () => {
+    setVideo(null);
+    setIsOpenModal(false);
   };
 
   return (
@@ -98,6 +112,7 @@ export const VideosContent = () => {
             key={index}
             title={video.title}
             thumbnail={video.thumbnail}
+            onClick={() => handleSelectVideo(video)}
           />
         ))}
       </Body>
@@ -118,6 +133,7 @@ export const VideosContent = () => {
           ))}
         </FooterContent>
       </Footer>
+      <Modal onClose={handleOnCloseodal} onOpen={isOpenModal} video={video} />
     </Container>
   );
 };

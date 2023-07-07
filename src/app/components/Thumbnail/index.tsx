@@ -11,7 +11,7 @@ import {
 interface ThumbnailProps {
   title: string;
   thumbnail: string;
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 export const Thumbnail = ({ title, thumbnail, onClick }: ThumbnailProps) => {

@@ -6,7 +6,9 @@ export const ThumbnailContainer = styled.div`
   position: relative;
   flex-direction: column;
   box-shadow: 0 0 36px 5px rgba(12, 0, 46, 0.04);
-  width: 362px;
+  min-width: 300px;
+  max-width: 362px;
+  width: 100%;
   border-radius: 10px;
   overflow: hidden;
 
@@ -50,9 +52,13 @@ export const ThumbnailImageContainer = styled.div`
   width: auto;
   height: auto;
   cursor: pointer;
+  object-fit: contain;
 `;
 
 export const ThumbnailImage = styled(Image)`
+  max-width: 100%;
+  position: relative;
+  height: auto;
   object-fit: contain;
 `;
 

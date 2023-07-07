@@ -18,27 +18,33 @@ import {
   VideoYoutube,
 } from "./styles";
 import { DownloadButton } from "../DownloadButton";
+import { VideoType } from "@/app/mock/Videos";
 
-export const Modal = () => {
+interface ModalProps {
+  video: VideoType | null;
+  onOpen: boolean;
+  onClose: () => void;
+}
+
+export const Modal = ({ video, onClose, onOpen }: ModalProps) => {
+  if (!onOpen) return;
+
   return (
     <ModalOverlay>
       <ModalContainer>
         <LineHeader />
-        <CloseContainer onClick={() => alert("fechar modal")}>
+        <CloseContainer onClick={onClose}>
           <CloseButton size={20} color="#718493" />
         </CloseContainer>
         <ModalHeader>
           <ModalHeaderTitle>
-            Webinar:{" "}
-            <ModalHeaderText>
-              Como aumentar sua Geração de Leads feat. Traktor
-            </ModalHeaderText>
+            Webinar: <ModalHeaderText>{video?.title}</ModalHeaderText>
           </ModalHeaderTitle>
         </ModalHeader>
 
         <ModalBody>
           <VideoYoutube
-            src="https://www.youtube.com/embed/ouCGdcnxeu8"
+            src={video?.url}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           />
@@ -47,11 +53,7 @@ export const Modal = () => {
           <DescriptionContainer>
             <DescriptionTitle>Descrição</DescriptionTitle>
             <Divider />
-            <DescriptionText>
-              Lorem ipsum dolor sit amet, consectetur adipng elit.Morbi cursus
-              massa. Lorem ipsum dolor sit amet, consectetur adipng elit.Morbi
-              cursus massa. Lorem ipsum dolor sit amet
-            </DescriptionText>
+            <DescriptionText>{video?.description}</DescriptionText>
           </DescriptionContainer>
           <DownloadsContainer>
             <DescriptionTitle>Downloads</DescriptionTitle>

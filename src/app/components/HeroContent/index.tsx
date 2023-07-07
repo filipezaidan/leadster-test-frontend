@@ -27,7 +27,7 @@ export const HeroContent = () => {
         <HeroDivider />
         <HeroDescription>
           Conheça as estratégias que <strong>mudaram o jogo</strong> e como
-          aplicá-las no seu negócio
+          aplicá-las no seu negócio.
         </HeroDescription>
       </HeroContainer>
     </HeroWrapper>

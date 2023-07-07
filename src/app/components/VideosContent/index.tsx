@@ -1,13 +1,12 @@
-"use client";
-
 import { useState } from "react";
-
-import { Divider } from "../HeroContent/styles";
+import { Thumbnail } from "../Thumbnail";
+import { Modal } from "../Modal";
+import { HeroDivider } from "../HeroContent/styles";
 import {
-  Container,
+  VideosContentWrapper,
   Body,
   Footer,
-  Header,
+  VideosContentHeader,
   ButtonPage,
   Text,
   FooterContent,
@@ -19,7 +18,6 @@ import {
   HeaderLeftContent,
   HeaderRightContent,
 } from "./styles";
-import { Thumbnail } from "../Thumbnail";
 
 import {
   VideoCategoryType,
@@ -28,7 +26,6 @@ import {
   VideoLimitPage,
   VideoType,
 } from "@/app/mock/Videos";
-import { Modal } from "../Modal";
 
 export const VideosContent = () => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -70,8 +67,8 @@ export const VideosContent = () => {
   };
 
   return (
-    <Container>
-      <Header>
+    <VideosContentWrapper>
+      <VideosContentHeader>
         <HeaderLeftContent>
           <ButtonCategoryContainer>
             <ButtonCategory
@@ -102,9 +99,9 @@ export const VideosContent = () => {
             </Select>
           </SelectContainer>
         </HeaderRightContent>
-      </Header>
+      </VideosContentHeader>
 
-      <Divider />
+      <HeroDivider />
 
       <Body>
         {currentItems.map((video, index) => (
@@ -117,7 +114,7 @@ export const VideosContent = () => {
         ))}
       </Body>
 
-      <Divider />
+      <HeroDivider />
 
       <Footer>
         <Text>Página</Text>
@@ -134,6 +131,6 @@ export const VideosContent = () => {
         </FooterContent>
       </Footer>
       <Modal onClose={handleOnCloseodal} onOpen={isOpenModal} video={video} />
-    </Container>
+    </VideosContentWrapper>
   );
 };

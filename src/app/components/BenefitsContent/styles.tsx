@@ -1,19 +1,30 @@
+import Image from "next/image";
 import styled from "styled-components";
-import { StyleRegistry } from "styled-jsx";
+import { Button } from "../Button";
 
 export const Container = styled.section`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 740px;
+  overflow: hidden;
+  height: auto;
+  padding: 4% 0%;
   background-color: #f0f8ff;
+  gap: 5%;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    gap: 0%;
+  }
 `;
 
 export const LeftContent = styled.div`
   display: flex;
   position: relative;
   flex: 1;
+  padding: 2%;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -21,39 +32,68 @@ export const LeftContent = styled.div`
 `;
 export const RightContent = styled.div`
   display: flex;
+
   flex-direction: column;
   flex: 1;
+  z-index: 2;
+  padding: 2%;
   width: 100%;
-  align-items: flex-start;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 `;
 
-{
-  /* TODO: adjust background element */
-}
+export const ImageBenefits = styled(Image)`
+  max-width: 100%;
+  height: auto;
+  z-index: 2;
+`;
+
 export const BackgroundElement = styled.div`
-  display: flex;
+  display: block;
   position: absolute;
   width: 100%;
-  height: 80%;
-  z-index: 1;
-  clip-path: polygon(0% -20%, 100% 100%, 0% 100%);
-  border-radius: 10% 10% 0% 0%;
+  height: 100%;
+  margin: 10% 20% -40% -20%;
+  transform: rotate(-43deg);
+  border-radius: 2rem;
   background-color: #e6f3ff;
 `;
 
 export const Title = styled.span`
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   color: #1c3c50;
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    font-size: 2.4rem;
+    max-width: 75%;
+  }
+  @media (min-width: 992px) {
+    font-size: 2.2rem;
+  }
+  @media (min-width: 1200px) {
+    max-width: 75%;
+    font-size: 2.2rem;
+  }
 `;
 
 export const Subtitle = styled.span`
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #1c3c50;
+
+  @media (min-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const Text = styled.p`
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #1c3c50;
+
+  @media (min-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 export const Divider = styled.div`
   width: 100%;
@@ -65,26 +105,19 @@ export const ElementsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
-  gap: 25px;
+  gap: 30px;
+
+  @media (min-width: 1200px) {
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
 `;
 
-export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  border-radius: 28px;
-  background-color: #0083ff;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 28px 36px;
-  border: transparent;
-  cursor: pointer;
-  transition: 0.2s;
-  &:hover {
-    background-color: #01c8fc;
-  }
+export const ButtonDemostration = styled(Button)`
+  min-height: 60px;
+  font-size: 0.9rem;
+  padding: 4px 32px;
 `;
 
 interface DivFlexProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -93,6 +126,19 @@ interface DivFlexProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const DivFlex = styled.div<DivFlexProps>`
   display: flex;
+  height: auto;
+  width: 100%;
   align-items: center;
-  gap: ${(props) => props.gap ?? 0};
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  /* 
+  @media (min-width: 768px) {
+  } */
+  @media (min-width: 992px) {
+    flex-wrap: wrap;
+    width: auto;
+    gap: ${(props) => `${props.gap}px` ?? 0};
+    /* justify-content: center; */
+  }
 `;

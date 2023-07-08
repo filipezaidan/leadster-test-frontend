@@ -12,6 +12,7 @@ export const ButtonContainer = styled.button`
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+  white-space: nowrap;
   transition: all 0.3s linear;
 
   &:hover {

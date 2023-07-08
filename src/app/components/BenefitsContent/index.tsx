@@ -10,21 +10,21 @@ import {
   Subtitle,
   Divider,
   ElementsContainer,
-  Button,
+  ButtonDemostration,
   Text,
   DivFlex,
+  ImageBenefits,
 } from "./styles";
 
 export const BenefitsContent = () => {
   return (
     <Container>
       <LeftContent>
-        <Image
+        <ImageBenefits
           src="/comparativo.png"
-          width={600}
-          height={600}
+          width={618}
+          height={578}
           alt="Imagem de comparativos de leads entre os serviços de CTA"
-          style={{ zIndex: 2, objectFit: "contain" }}
         />
         <BackgroundElement />
       </LeftContent>
@@ -38,28 +38,32 @@ export const BenefitsContent = () => {
           </Subtitle>
           <Divider />
           <DivFlex gap={20}>
-            <Button>VER DEMOSTRAÇÃO</Button>
+            <ButtonDemostration>VER DEMOSTRAÇÃO</ButtonDemostration>
             <Image src="/selo.png" width={200} height={70} alt="Selo " />
           </DivFlex>
           <DivFlex gap={5}>
-            <Image
-              src="/credit-card.webp"
-              width={16}
-              height={16}
-              alt="Icone de cartão de crédito"
-            />
-            <Text>
-              <strong>Não</strong> é necessário Cartão de Crédito |
-            </Text>
-            <Image
-              src="/rating.webp"
-              width={92}
-              height={16}
-              alt="Icone de qualificação do serviço"
-            />
-            <Text>
-              <strong>4.9/5</strong> média de satisfação
-            </Text>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <Image
+                src="/credit-card.webp"
+                width={16}
+                height={16}
+                alt="Icone de cartão de crédito"
+              />
+              <Text>
+                <strong>Não</strong> é necessário Cartão de Crédito |
+              </Text>
+            </div>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <Image
+                src="/rating.webp"
+                width={92}
+                height={16}
+                alt="Icone de qualificação do serviço"
+              />
+              <Text>
+                <strong>4.9/5</strong> média de satisfação
+              </Text>
+            </div>
           </DivFlex>
         </ElementsContainer>
       </RightContent>

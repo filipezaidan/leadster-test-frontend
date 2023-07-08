@@ -1,78 +1,82 @@
-/* eslint-disable react/jsx-key */
-"use client";
-
 import Image from "next/image";
 import { SocialIcon } from "../SocialIcon";
 import { FooterContact, FooterLinks } from "@/app/mock/Footer";
 import {
-  Columns,
-  LinkItem,
-  ColumnLinksContainer,
-  ColumnTitle,
-  Container,
+  FooterColumnsContainer,
+  FooterLinkItem,
+  FooterColumnContent,
+  FoooterColumnTitle,
+  FooterWrapper,
   Divider,
   FooterContent,
-  HeaderContent,
-  Text,
-  ColumnLinks,
-  ColumnContact,
+  FooterHeader,
+  FooterText,
+  FooterColumnLinks,
+  FooterColumnContact,
   SocialIconsWrapper,
+  FooterContainer,
+  FooterInformation,
+  FooterContactContainer,
 } from "./styles";
 
 const { email, telephone, socials } = FooterContact;
 
 export const Footer = () => {
   return (
-    <>
-      <Container>
-        <HeaderContent>
+    <FooterWrapper>
+      <FooterContainer>
+        <FooterHeader>
           <Image
             src="/logo.gif"
             width={270}
             height={62}
             alt="Gif da logo da empresa Leadster"
           />
-          <Text>Transformando visitantes em clientes.</Text>
-        </HeaderContent>
-        <Columns>
+          <FooterText>Transformando visitantes em clientes.</FooterText>
+        </FooterHeader>
+        <FooterColumnsContainer>
           {FooterLinks.map(({ title, links }, key) => (
-            <ColumnLinks key={key}>
-              <ColumnTitle>{title}</ColumnTitle>
-              <ColumnLinksContainer>
+            <FooterColumnLinks key={key}>
+              <FoooterColumnTitle>{title}</FoooterColumnTitle>
+              <FooterColumnContent>
                 {links.map((link, key) => (
-                  <LinkItem key={key} href={link.href}>
+                  <FooterLinkItem key={key} href={link.href}>
                     {link.title}
-                  </LinkItem>
+                  </FooterLinkItem>
                 ))}
-              </ColumnLinksContainer>
-            </ColumnLinks>
+              </FooterColumnContent>
+            </FooterColumnLinks>
           ))}
-          <ColumnContact>
-            <ColumnTitle>Siga a Leadster</ColumnTitle>
-            <SocialIconsWrapper>
-              {socials.map((social, key) => (
-                <SocialIcon key={key} {...social} />
-              ))}
-            </SocialIconsWrapper>
-            <Text>{`${email.name}: ${email.value} `}</Text>
-            <Text>{`${telephone.name}: ${telephone.value} `}</Text>
-          </ColumnContact>
-        </Columns>
-        <Divider />
-        <FooterContent>
-          <Text>
-            Copyright © 2015 - 2022 Todos os direitos reservados |{" "}
-            <LinkItem color="#00aff0" href="#">
-              Leadster
-            </LinkItem>
-          </Text>
+          <FooterColumnContact>
+            <FoooterColumnTitle>Siga a Leadster</FoooterColumnTitle>
+            <FooterContactContainer>
+              <SocialIconsWrapper>
+                {socials.map((social, key) => (
+                  <SocialIcon key={key} {...social} />
+                ))}
+              </SocialIconsWrapper>
+              <FooterInformation>
+                <FooterText>{`${email.name}: ${email.value} `}</FooterText>
+                <FooterText>{`${telephone.name}: ${telephone.value} `}</FooterText>
+              </FooterInformation>
+            </FooterContactContainer>
+          </FooterColumnContact>
+        </FooterColumnsContainer>
+      </FooterContainer>
+      <Divider />
+      <FooterContent>
+        <FooterText>
+          Copyright © 2015 - 2022 Todos os direitos reservados |{" "}
+          <FooterLinkItem color="#00aff0" href="#">
+            Leadster
+          </FooterLinkItem>
+        </FooterText>
 
-          <Text>
-            Rua José Loureiro, 464 - Centro - Curitiba PR - CEP: 80010-000 |{" "}
-            <LinkItem href="#">Termos de uso</LinkItem>
-          </Text>
-        </FooterContent>
-      </Container>
-    </>
+        <FooterText>
+          Rua José Loureiro, 464 - Centro - Curitiba PR - CEP: 80010-000 |{" "}
+          <FooterLinkItem href="#">Termos de uso</FooterLinkItem>
+        </FooterText>
+      </FooterContent>
+    </FooterWrapper>
   );
 };

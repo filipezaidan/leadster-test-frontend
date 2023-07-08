@@ -30,9 +30,9 @@ export const LeftContent = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 export const RightContent = styled.div`
   display: flex;
-
   flex-direction: column;
   flex: 1;
   z-index: 2;
@@ -43,13 +43,26 @@ export const RightContent = styled.div`
   justify-content: center;
 `;
 
-export const ImageBenefits = styled(Image)`
+export const RightContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 30px;
+
+  @media (min-width: 1200px) {
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
+`;
+
+export const LeftContentImage = styled(Image)`
   max-width: 100%;
   height: auto;
   z-index: 2;
 `;
 
-export const BackgroundElement = styled.div`
+export const LeftContentElement = styled.div`
   display: block;
   position: absolute;
   width: 100%;
@@ -60,7 +73,7 @@ export const BackgroundElement = styled.div`
   background-color: #e6f3ff;
 `;
 
-export const Title = styled.span`
+export const RightContentTitle = styled.span`
   font-size: 2.4rem;
   color: #1c3c50;
   max-width: 100%;
@@ -78,7 +91,7 @@ export const Title = styled.span`
   }
 `;
 
-export const Subtitle = styled.span`
+export const RightContentSubtitle = styled.span`
   font-size: 1.1rem;
   color: #1c3c50;
 
@@ -95,36 +108,24 @@ export const Text = styled.p`
     font-size: 1rem;
   }
 `;
-export const Divider = styled.div`
+export const RightContentDivider = styled.div`
   width: 100%;
   height: 2px;
   background-color: #c8d4dd;
 `;
 
-export const ElementsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  gap: 30px;
-
-  @media (min-width: 1200px) {
-    align-items: flex-start;
-    width: 100%;
-    gap: 10px;
-  }
-`;
-
-export const ButtonDemostration = styled(Button)`
+export const RightContentButton = styled(Button)`
   min-height: 60px;
   font-size: 0.9rem;
   padding: 4px 32px;
 `;
 
-interface DivFlexProps extends React.HTMLAttributes<HTMLDivElement> {
-  gap?: number;
-}
+export const RightContentRow = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-export const DivFlex = styled.div<DivFlexProps>`
+export const RightContentElement = styled.div<{ gap?: number }>`
   display: flex;
   height: auto;
   width: 100%;
@@ -132,13 +133,10 @@ export const DivFlex = styled.div<DivFlexProps>`
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-  /* 
-  @media (min-width: 768px) {
-  } */
+
   @media (min-width: 992px) {
     flex-wrap: wrap;
     width: auto;
     gap: ${(props) => `${props.gap}px` ?? 0};
-    /* justify-content: center; */
   }
 `;

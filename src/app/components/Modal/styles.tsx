@@ -8,21 +8,38 @@ export const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 0% 5%;
   background-color: rgba(29, 61, 81, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 425px) {
+    padding: 0% 10%;
+  }
+  @media (min-width: 576px) {
+    padding: 0% 15%;
+  }
+  @media (min-width: 768px) {
+    padding: 0% 25%;
+  }
+  @media (min-width: 992px) {
+    padding: 0% 28%;
+  }
+  @media (min-width: 1400px) {
+    padding: 0% 35%;
+  }
 `;
 
 export const ModalContainer = styled.div`
   display: flex;
+  overflow: auto;
   flex-direction: column;
-  border-radius: 16px;
+  border-radius: 1rem;
   position: relative;
-  min-height: 480px;
   min-width: 300px;
-  width: 32%;
-  height: 72%;
+  width: 100%;
+  height: auto;
   background-color: white;
   overflow: hidden;
 `;
@@ -30,7 +47,11 @@ export const ModalContainer = styled.div`
 export const ModalHeader = styled.div`
   display: flex;
   width: 100%;
-  padding: 0% 0% 5% 15%;
+  padding: 0% 5% 5% 5%;
+
+  @media (min-width: 992px) {
+    padding: 0% 8% 5% 8%;
+  }
 `;
 
 export const CloseContainer = styled.div`
@@ -49,11 +70,12 @@ export const ModalHeaderTitle = styled.span`
   font-weight: 600;
   color: #007eff;
 `;
+
 export const ModalHeaderText = styled.span`
   color: #1c3c50;
 `;
 
-export const LineHeader = styled.div`
+export const ModalLineHeader = styled.div`
   display: flex;
   width: 100%;
   height: 4px;
@@ -70,7 +92,7 @@ export const ModalBody = styled.div`
   flex: 1;
 `;
 
-export const VideoYoutube = styled.iframe`
+export const ModalVideoYoutube = styled.iframe`
   display: flex;
   border: none;
   width: 100%;
@@ -119,4 +141,9 @@ export const DownloadsContainer = styled.div`
 export const DownaloadsButtonsContainer = styled.div`
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+
+  @media (min-width: 992px) {
+    flex-wrap: nowrap;
+  }
 `;

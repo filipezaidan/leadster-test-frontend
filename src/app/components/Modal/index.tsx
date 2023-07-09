@@ -7,7 +7,7 @@ import {
   Divider,
   DownaloadsButtonsContainer,
   DownloadsContainer,
-  LineHeader,
+  ModalLineHeader,
   ModalBody,
   ModalContainer,
   ModalFooter,
@@ -15,7 +15,7 @@ import {
   ModalHeaderText,
   ModalHeaderTitle,
   ModalOverlay,
-  VideoYoutube,
+  ModalVideoYoutube,
 } from "./styles";
 import { DownloadButton } from "../DownloadButton";
 import { VideoType } from "@/app/mock/Videos";
@@ -32,7 +32,7 @@ export const Modal = ({ video, onClose, onOpen }: ModalProps) => {
   return (
     <ModalOverlay>
       <ModalContainer>
-        <LineHeader />
+        <ModalLineHeader />
         <CloseContainer onClick={onClose}>
           <CloseButton size={20} color="#718493" />
         </CloseContainer>
@@ -43,7 +43,7 @@ export const Modal = ({ video, onClose, onOpen }: ModalProps) => {
         </ModalHeader>
 
         <ModalBody>
-          <VideoYoutube
+          <ModalVideoYoutube
             src={video?.url}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

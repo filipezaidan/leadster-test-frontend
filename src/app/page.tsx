@@ -1,10 +1,10 @@
 "use client";
 
-import { Header } from "./components/Header";
-import { HeroContent } from "./components/HeroContent";
-import { VideosContent } from "./components/VideosContent";
-import { BenefitsContent } from "./components/BenefitsContent";
-import { Footer } from "./components/Footer";
+import { Header } from "@/app/components/Header";
+import { HeroContent } from "@/app/components/HeroContent";
+import { VideosContent } from "@/app/components/VideosContent";
+import { BenefitsContent } from "@/app/components/BenefitsContent";
+import { Footer } from "@/app/components/Footer";
 
 export default function Home() {
   return (

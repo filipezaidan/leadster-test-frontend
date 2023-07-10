@@ -74,6 +74,7 @@ export const LeftContentElement = styled.div`
 `;
 
 export const RightContentTitle = styled.span`
+  display: block;
   font-size: 2.4rem;
   color: #1c3c50;
   max-width: 100%;
@@ -87,6 +88,11 @@ export const RightContentTitle = styled.span`
   }
   @media (min-width: 1200px) {
     max-width: 75%;
+    font-size: 2.2rem;
+  }
+
+  @media (min-width: 1583px) and (max-width: 1980px) {
+    max-width: 60%;
     font-size: 2.2rem;
   }
 `;
@@ -123,6 +129,7 @@ export const RightContentButton = styled(Button)`
 export const RightContentRow = styled.div`
   display: flex;
   align-items: center;
+  gap: 4px;
 `;
 
 export const RightContentElement = styled.div<{ gap?: number }>`

@@ -1,7 +1,8 @@
 
 # Landing Page - Leadster
 
-![image](https://github.com/filipezaidan/leadster-test-frontend/assets/41112779/40ceebf9-9443-4aae-a002-e5b9bf6da190)
+![image](https://github.com/filipezaidan/leadster-test-frontend/assets/41112779/6dec283b-f91c-4ea8-a75b-5d0202fa05b7)
+
 
 
 

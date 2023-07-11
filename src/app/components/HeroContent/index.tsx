@@ -21,7 +21,7 @@ export const HeroContent = () => {
         <HeroSubtitle>Menos Conversinha,</HeroSubtitle>
         <HeroContainerTitle>
           <HeroTitle>
-            <HeroTitleBackground>Mais Conversação</HeroTitleBackground>
+            <HeroTitleBackground>Mais Conversão</HeroTitleBackground>
           </HeroTitle>
         </HeroContainerTitle>
         <HeroDivider />
